@@ -17,7 +17,60 @@
 <html>
 
 <head>
-    <title>Employee Management Application</title>
+    <title>Employee List</title>
+
+    <style>
+        body {
+            background-color: #008ae6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px #D3D3D3;
+        }
+
+        h3 {
+            text-align: center;
+            color: #3C3C3C;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #5c5cd6;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #F2F2F2;
+        }
+
+        input[type=submit] {
+            background-color: #337AB7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #286090;
+        }
+    </style>
 
 </head>
 
@@ -32,7 +85,6 @@
     <div class="container">
         <h3 class="text-center">List of Employees</h3>
         <hr>
-        v>
         <br>
 
         <table  class="table table-bordered">

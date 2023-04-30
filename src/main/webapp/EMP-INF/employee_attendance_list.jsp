@@ -17,63 +17,58 @@
 <html>
 
 <head>
-    <title>Employee Management Application</title>
-
+    <title>Employee Attendance</title>
+    <style>
+        body {
+            background-color: #F5F5F5;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            border: 1px solid #5c5cd6;
+            width: 80%;
+        }
+        th, td {
+            border: 1px solid #5c5cd6;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #5c5cd6;
+        }
+        h3 {
+            margin-top: 50px;
+        }
+    </style>
 </head>
 
 <body>
-
-
-
-
 <div class="row">
-    <!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
-
     <div class="container">
-        <h3 class="text-center">List of Attendance</h3>
+        <h3>List of Attendance</h3>
         <hr>
 
         <br>
 
-        <table  class="table table-bordered">
+        <table>
             <thead>
             <tr>
-                <th>Attendance_ID</th>
-                <th>Employee_ID</th>
-                <th>Date_of_Day</th>
-
-
+                <th>Attendance ID</th>
+                <th>Employee ID</th>
+                <th>Date of Day</th>
             </tr>
             </thead>
             <tbody>
-
-
-
-            <%--            <%=request.getSession().getAttribute("listUser")%>--%>
-
-
-
-            <c:forEach  var="attendance" items="${sessionScope.ListAttendance}">
-
+            <c:forEach var="attendance" items="${sessionScope.ListAttendance}">
                 <tr>
-
-                    <td>
-                        <c:out value="${ attendance.getAttendance_id()}" />
-                    </td>
-                    <td>
-                        <c:out value="${attendance.getEmployee_id()}" />
-                    </td>
-                    <td>
-                        <c:out value="${ attendance.getDateofDay()}" />
-                    </td>
-
-
+                    <td><c:out value="${attendance.getAttendance_id()}" /></td>
+                    <td><c:out value="${attendance.getEmployee_id()}" /></td>
+                    <td><c:out value="${attendance.getDateofDay()}" /></td>
                 </tr>
-
             </c:forEach>
-
             </tbody>
-
         </table>
 
     </div>

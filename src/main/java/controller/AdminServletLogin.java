@@ -28,7 +28,7 @@ public class AdminServletLogin extends HttpServlet
     }
 
     @Override
-    protected void doPost (HttpServletRequest request, HttpServletResponse response)
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         String username = request.getParameter("username");

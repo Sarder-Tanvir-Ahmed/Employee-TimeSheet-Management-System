@@ -13,7 +13,7 @@ import java.io.IOException;
 
 @WebServlet(name = "EmployeeServlet", value = "/EmployeeServlet")
 public class EmployeeServlet extends HttpServlet {
-    EmployeeDao employeeDao = new EmployeeDao();
+    public EmployeeDao employeeDao = new EmployeeDao();
 
 
     @Override
@@ -29,7 +29,7 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         String userName = request.getParameter("userName");

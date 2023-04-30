@@ -14,73 +14,92 @@
 <%@ page isELIgnored="false" %>
 
 
+<!DOCTYPE html>
 <html>
-
 <head>
+    <meta charset="UTF-8">
     <title>Employee Management Application</title>
-
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #008ae6;
+        }
+        .container {
+            margin-top: 50px;
+            background-color: #fff;
+            padding: 50px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        table {
+            margin-top: 30px;
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        table thead tr th {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+        }
+        table tbody tr td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .add-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        .add-button:hover {
+            background-color: #0062cc;
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
 </head>
 
 <body>
 
-
-
-
-<div class="row">
-    <!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
-
-    <div class="container">
-        <h3 class="text-center">List of Projects</h3>
-        <hr>
-        <div class="container text-left">
-
-            <form action="<%= request.getContextPath() %>/main/webapp/EMP-INF/employee_project_register.jsp" method="Get" >
-                <input type="submit" value="Add New Project"  >
-            </form>
-        </div>
-        <br>
-
-        <table  class="table table-bordered">
-            <thead>
+<div class="container">
+    <h1>List of Projects</h1>
+    <form action="<%= request.getContextPath() %>/EMP-INF/employee_project_register.jsp" method="Get">
+        <button class="add-button">Add New Project</button>
+    </form>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Project Name</th>
+            <th>Project Under Who</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach var="project" items="${sessionScope.ListProject}">
             <tr>
-                <th>ID</th>
-                <th>Project_Name</th>
-                <th>Project_Under_Who</th>
-                <th>Start_Date</th>
-                <th>End_Date</th>
+                <td><c:out value="${project.getProject_id()}" /></td>
+                <td><c:out value="${project.getProject_name()}" /></td>
+                <td><c:out value="${project.getProject_Under_Who()}" /></td>
+                <td><c:out value="${project.getStart_date()}" /></td>
+                <td><c:out value="${project.getEnd_date()}" /></td>
+
+
 
             </tr>
-            </thead>
-            <tbody>
-
-
-
-            <%--            <%=request.getSession().getAttribute("listUser")%>--%>
-
-
-
-            <c:forEach  var="project" items="${sessionScope.ListProject}">
-
-                <tr>
-
-                    <td>
-                        <c:out value="${ project.getProject_id()}" />
-                    </td>
-                    <td>
-                        <c:out value="${project.getProject_name()}" />
-                    </td>
-                    <td>
-                        <c:out value="${ project.getProject_Under_Who()}" />
-                    </td>
-                    <td>
-                        <c:out value="${project.getStart_date()}" />
-                    </td>
-                    <td>
-                        <c:out value="${ project.getEnd_date()}" />
-                    </td>
-
-
-                </tr>
 
             </c:forEach>
 

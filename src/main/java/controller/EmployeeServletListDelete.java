@@ -35,7 +35,7 @@ public class EmployeeServletListDelete extends HttpServlet {
         try {
             String id = (request.getParameter("Id"));
             employeeDaolistdelete.deleteUser(id);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("EMP-INF/employee_details.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("EMP-INF/employee_timeoffrequest_list.jsp");
             dispatcher.forward(request, response);
         } catch (SQLException e) {
             throw new RuntimeException(e);

@@ -11,24 +11,51 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-    <title>Title</title>
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            background-color: #F0F8FF;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: #0066CC;
+        }
+        form {
+            margin: 0 auto;
+            display: inline-block;
+            text-align: left;
+        }
+        input[type=submit] {
+            background-color: #0066CC;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        input[type=submit]:hover {
+            background-color: #003399;
+        }
+    </style>
 </head>
 <body>
 <h1>Admin DashBoard</h1>
-
-
-<h2>Hello <c:out value="${sessionScope.username}"/>               </h2>
+<h2>Hello <c:out value="${sessionScope.username}"/></h2>
 
 <form action="<%= request.getContextPath() %>/EmployeeServletList" method="Get">
-   <input type="submit" value="Employee Details" >
-
+    <input type="submit" value="Employee Details">
 </form>
 
 <form action="<%= request.getContextPath() %>/EmployeeServletAttendanceList" method="Get">
-    <input type="submit" value="Attendance Details" >
-
+    <input type="submit" value="Attendance Details">
 </form>
 
-
+<form action="<%= request.getContextPath() %>/EmployeeServletTimeOffList" method="Get">
+    <input type="submit" value="Time Off Details">
+</form>
 </body>
 </html>
