@@ -85,3 +85,9 @@ public class AdminServletLoginTest extends AdminServletLogin {
         verify(response, times(1)).sendRedirect("index.jsp");
     }
 }
+
+
+/*This is a JUnit test, using Mockito to mock the request, response, and DAO objects
+and verifying that the expected request dispatcher method is
+  called or a redirect is performed based on the validation result of the admin login.
+ */

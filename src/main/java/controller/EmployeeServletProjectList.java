@@ -15,16 +15,17 @@ import java.util.List;
 
 @WebServlet(name = "EmployeeServletProjectList", value = "/EmployeeServletProjectList")
 public class EmployeeServletProjectList extends HttpServlet {
-    EmployeeDaoProjectList employeeDaoprojectlist = new EmployeeDaoProjectList();
+    public EmployeeDaoProjectList employeeDaoprojectlist;
 
 
     @Override
     public void init() throws ServletException {
         super.init();
+        employeeDaoprojectlist = new EmployeeDaoProjectList();
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
 
 

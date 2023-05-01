@@ -22,6 +22,7 @@ public class EmployeeServletLoginTest {
     @Mock
     HttpServletResponse response;
 
+
     @Mock
     RequestDispatcher requestDispatcher;
 
@@ -59,3 +60,8 @@ public class EmployeeServletLoginTest {
         verify(requestDispatcher).forward(request, response);
     }
 }
+
+
+/*This is a unit test for the doPost() method in the EmployeeServlet
+ class using Mockito to mock the request, response, and DAO objects.
+ */
